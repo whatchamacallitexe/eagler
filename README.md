@@ -1,22 +1,18 @@
 # Eaglercraft Clients
 
-Offline Eaglercraft clients from Ultimate Game Stash.
+Offline Eaglercraft client loaders hosted for GitHub Pages.
 
-Each folder has an `index.html` that loads the full client (may take a while on first load).
+**Pages:** `https://whatchamacallitexe.github.io/eagler/` (enable Pages on `main` if not already)
 
-## Clients
+## All clients
 
-| Path | Name |
-|------|------|
-| `/eagler-forge/` | Eagler Forge |
-| `/eaglercraft-26-2/` | Eaglercraft 26.2 |
-| `/eaglercraft-lite/` | Eaglercraft Lite |
-| `/eaglercraft-nebula/` | Eaglercraft Nebula |
-| `/eaglercraft-odd-future/` | EaglerCraft Odd Future |
-| `/eaglercraft-shadow/` | Eaglercraft Shadow |
-| `/eaglercraft-ultimate/` | Eaglercraft Ultimate |
-| `/eaglercraft-winston-horror/` | Eaglercraft Winston Horror |
-| `/eaglercraftx-1-16/` | EaglercraftX 1.16 |
-| `/eaglercraftx-1-20-6/` | EaglercraftX 1.20.6 |
+### UGS / popular
+eagler-forge, eaglercraft-nebula, eaglercraft-odd-future, eaglercraft-shadow, eaglercraft-ultimate, eaglercraft-winston-horror, resent, pi, astra, pixel, tuff, starlike
 
-Pages URL pattern: `https://whatchamacallitexe.github.io/eagler/<slug>/`
+### More
+gx, codercraft, jmocraft, kerosene, mega, nit, nova, archimedes, explore, justin, kozmo, lambda, lumine, precision, prism, reborn, skyfactory, solar, tech, uwu, wurst, zeta
+
+### Large offline stubs
+eaglercraft-26-2, eaglercraft-lite, eaglercraftx-1-16, eaglercraftx-1-20-6
+
+Each folder is `/{slug}/index.html` and loads the full client from CDN parts on first open.
