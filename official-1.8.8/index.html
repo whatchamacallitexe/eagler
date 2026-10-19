@@ -1,0 +1,34 @@
+<!-- Official EaglercraftX 1.8.8 (lax1dude) -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>EaglercraftX 1.8.8 Official</title>
+  <style>body{margin:0;background:#111;color:#0f0;font-family:monospace;display:flex;align-items:center;justify-content:center;height:100vh}#s{text-align:center}</style>
+</head>
+<body>
+  <div id="s">Loading official EaglercraftX 1.8.8…<br><small>Most stable version by lax1dude</small></div>
+  <script>
+    async function run() {
+      const urls = [
+        "https://cdn.jsdelivr.net/gh/valux-game/Minecraft-Clients@main/EaglercraftX_1.8_u27_Offline_Signed.html",
+        "https://cdn.jsdelivr.net/gh/sillysausage892/eaglercraft-version-list@master/Eaglercraft-1.8-WASM.html"
+      ];
+      let lastErr;
+      for (const u of urls) {
+        try {
+          const res = await fetch(u);
+          if (!res.ok) throw new Error(res.status);
+          const html = await res.text();
+          document.open();
+          document.write(html);
+          document.close();
+          return;
+        } catch (e) { lastErr = e; }
+      }
+      document.getElementById("s").textContent = "Load failed: " + lastErr;
+    }
+    run();
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!-- Official Eaglercraft 1.5.2 (lax1dude) -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Eaglercraft 1.5.2 Official</title>
+  <style>body{margin:0;background:#111;color:#0f0;font-family:monospace;display:flex;align-items:center;justify-content:center;height:100vh}#s{text-align:center}</style>
+</head>
+<body>
+  <div id="s">Loading official Eaglercraft 1.5.2…<br><small>Original by lax1dude</small></div>
+  <script>
+    async function run() {
+      // Primary: archive mirror of official Offline_Download_Version.html
+      const urls = [
+        "https://cdn.jsdelivr.net/gh/valux-game/Minecraft-Clients@main/EaglerCraft_1.5.2_Offline.html",
+        "https://raw.githubusercontent.com/lDEVinux/eaglercraft/main/stable-download/Offline_Download_Version.html",
+        "https://cdn.jsdelivr.net/gh/Boris1234568/eaglercraft@main/1.5.2.html"
+      ];
+      let lastErr;
+      for (const u of urls) {
+        try {
+          const res = await fetch(u);
+          if (!res.ok) throw new Error(res.status);
+          const html = await res.text();
+          document.open();
+          document.write(html);
+          document.close();
+          return;
+        } catch (e) { lastErr = e; }
+      }
+      document.getElementById("s").textContent = "Load failed: " + lastErr;
+    }
+    run();
+  </script>
+</body>
+</html>
