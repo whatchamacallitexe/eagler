@@ -1,0 +1,31 @@
+<!-- Ultimate Game Stash file - Eaglercraft Ultimate -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Eaglercraft Ultimate</title>
+  <style>body{margin:0;background:#111;color:#0f0;font-family:monospace;display:flex;align-items:center;justify-content:center;height:100vh}#s{text-align:center}</style>
+</head>
+<body>
+  <div id="s">Loading Ultimate…<br><small>This can take a while</small></div>
+  <script>
+    async function run() {
+      const urls = [
+        "https://cdn.jsdelivr.net/gh/shayderrr/eaglercraft@main/ultimate/cleaglerultimate.html.part1",
+        "https://cdn.jsdelivr.net/gh/shayderrr/eaglercraft@main/ultimate/cleaglerultimate.html.part2",
+        "https://cdn.jsdelivr.net/gh/shayderrr/eaglercraft@main/ultimate/cleaglerultimate.html.part3",
+        "https://cdn.jsdelivr.net/gh/shayderrr/eaglercraft@main/ultimate/cleaglerultimate.html.part4"
+      ];
+      let fullHtml = "";
+      for (const u of urls) {
+        const res = await fetch(u);
+        fullHtml += await res.text();
+      }
+      document.open();
+      document.write(fullHtml);
+      document.close();
+    }
+    run().catch(e => { document.getElementById('s').textContent = 'Load failed: ' + e; });
+  </script>
+</body>
+</html>
