@@ -1,0 +1,31 @@
+<!-- EB Client Nextgen CU7 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>EB Client Nextgen</title>
+  <style>body{margin:0;background:#111;color:#0f0;font-family:monospace;display:flex;align-items:center;justify-content:center;height:100vh}#s{text-align:center}</style>
+</head>
+<body>
+  <div id="s">Loading EB Nextgen…</div>
+  <script>
+    async function run() {
+      const urls = [
+        "https://cdn.jsdelivr.net/gh/EaglercraftNOA/client@main/EB.Client.Nextgen.CU7.html",
+        "https://cdn.jsdelivr.net/gh/EaglercraftNOA/client@main/EB.Client.Nextgen.CU6.html",
+        "https://cdn.jsdelivr.net/gh/EaglercraftNOA/client@main/EB%20Client%20Nextgen%20CU3.html"
+      ];
+      let lastErr;
+      for (const u of urls) {
+        try {
+          const res = await fetch(u);
+          if (!res.ok) throw new Error(res.status);
+          document.open(); document.write(await res.text()); document.close(); return;
+        } catch (e) { lastErr = e; }
+      }
+      document.getElementById("s").textContent = "Load failed: " + lastErr;
+    }
+    run();
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!-- EaglyMC 1.20 WASM -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>EaglyMC 1.20</title>
+  <style>body{margin:0;background:#111;color:#0f0;font-family:monospace;display:flex;align-items:center;justify-content:center;height:100vh}#s{text-align:center}</style>
+</head>
+<body>
+  <div id="s">Loading EaglyMC 1.20…</div>
+  <script>
+    async function run() {
+      const urls = [
+        "https://cdn.jsdelivr.net/gh/EaglercraftNOA/client@main/Eaglymc_1.20_WASM.html",
+        "https://cdn.jsdelivr.net/gh/EaglercraftNOA/client@main/Eaglymc_1.20_JS.html"
+      ];
+      let lastErr;
+      for (const u of urls) {
+        try {
+          const res = await fetch(u);
+          if (!res.ok) throw new Error(res.status);
+          document.open(); document.write(await res.text()); document.close(); return;
+        } catch (e) { lastErr = e; }
+      }
+      document.getElementById("s").textContent = "Load failed: " + lastErr;
+    }
+    run();
+  </script>
+</body>
+</html>

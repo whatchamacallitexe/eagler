@@ -1,0 +1,20 @@
+<!-- Myven Client WASM-GC -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Myven Client</title>
+  <style>body{margin:0;background:#111;color:#0f0;font-family:monospace;display:flex;align-items:center;justify-content:center;height:100vh}#s{text-align:center}</style>
+</head>
+<body>
+  <div id="s">Loading Myven…</div>
+  <script>
+    async function run() {
+      const res = await fetch("https://cdn.jsdelivr.net/gh/EaglercraftNOA/client@main/MyvenClient_WASMGC.html");
+      if (!res.ok) throw new Error(res.status);
+      document.open(); document.write(await res.text()); document.close();
+    }
+    run().catch(e => { document.getElementById("s").textContent = "Load failed: " + e; });
+  </script>
+</body>
+</html>
